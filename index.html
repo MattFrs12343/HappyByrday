@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎁 Sorpresa para Ari</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="gift-area">
+      <div id="gift-box" class="shake sway">🎁</div>
+      <div class="tag">De: Mati<br>Para: Ari</div>
+    </div>
+
+    <div id="message" class="hidden">¡Feliz cumpleaños, mi amor! 💖</div>
+
+    <div id="letter-modern" class="hidden">
+      <div class="letter-content">
+        <h2>Mi carta para ti 💌</h2>
+        <p>Amor mío,</p>
+        <p>Hoy celebro tu vida con todo mi corazón. Gracias por cada sonrisa, por tu dulzura, por estar a mi lado. Eres mi alegría diaria y mi mayor fortuna. Te amo con todo lo que soy.</p>
+        <p>Con amor,<br>Matías 💖</p>
+
+        <div class="photo-gallery">
+          <img src="img/foto1.jpg" class="photo polaroid rotate-left" data-phrase="Eres mi luz en los días nublados." alt="Foto 1" />
+          <img src="img/foto2.jpg" class="photo polaroid rotate-right" data-phrase="Cada momento contigo es un regalo." alt="Foto 2" />
+          <img src="img/foto3.jpg" class="photo polaroid rotate-left" data-phrase="Tu sonrisa ilumina mi mundo." alt="Foto 3" />
+          <img src="img/foto4.jpg" class="photo polaroid rotate-right" data-phrase="Por siempre juntos, mi amor." alt="Foto 4" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Zoom Photo -->
+  <div id="photo-modal" class="hidden">
+    <div id="modal-content">
+      <img id="modal-img" src="" alt="Zoom Foto" />
+      <p id="modal-phrase"></p>
+      <button id="modal-close" aria-label="Cerrar">×</button>
+    </div>
+  </div>
+
+  <canvas id="confetti-canvas"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

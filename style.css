@@ -1,0 +1,319 @@
+/* Fondo festivo con luces brillantes */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at center, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  /* Luces brillantes animadas */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background:
+      radial-gradient(circle at 20% 20%, #ffd6e8, transparent 30%),
+      radial-gradient(circle at 80% 30%, #ff93a6, transparent 30%),
+      radial-gradient(circle at 50% 70%, #ff6f91, transparent 30%);
+    animation: pulseLights 10s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.7;
+  }
+  
+  @keyframes pulseLights {
+    0% {
+      transform: scale(1) translate(0, 0);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.1) translate(10px, 10px);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) translate(0, 0);
+      opacity: 0.7;
+    }
+  }
+  
+  .container {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    max-width: 640px;
+  }
+  
+  .gift-area {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+  
+  #gift-box {
+    font-size: 32vw;
+    max-width: 90vw;
+    line-height: 1;
+    cursor: pointer;
+    animation: shake 1s infinite;
+    user-select: none;
+    z-index: 10;
+  }
+  
+  .tag {
+    position: absolute;
+    top: 10%;
+    right: -12vw;
+    background: #fff3f8;
+    border: 2px dashed #d63384;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 3vw;
+    color: #c2185b;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    transform: rotate(-10deg);
+    white-space: nowrap;
+    user-select: none;
+  }
+  
+  @media (min-width: 600px) {
+    #gift-box {
+      font-size: 180px;
+    }
+    .tag {
+      font-size: 16px;
+      right: -130px;
+    }
+  }
+  
+  @keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  @keyframes sway {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  .sway {
+    animation: sway 3s ease-in-out infinite;
+    transform-origin: center bottom;
+  }
+  
+  #message {
+    font-size: 1.8em;
+    margin-top: 20px;
+    color: #d63384;
+    transition: opacity 1s;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Carta moderna */
+  #letter-modern {
+    max-width: 90%;
+    width: 600px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(198, 61, 109, 0.8);
+    padding: 30px;
+    margin: 40px auto 60px auto;
+    text-align: center;
+    animation: fadeInUp 1.5s ease forwards;
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  
+  #letter-modern.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .letter-content h2 {
+    font-size: 28px;
+    color: #d63384;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 0 0 6px #ff69b4;
+  }
+  
+  .letter-content p {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+  
+  /* Galería con animación */
+  .photo-gallery {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+  
+  .photo {
+    width: 110px;
+    height: 90px;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.7);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    background: white;
+    opacity: 0;
+    transform: scale(0.8);
+    animation-fill-mode: forwards;
+    animation-name: photoFadeZoom;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-out;
+    cursor: pointer;
+  }
+  
+  .photo:nth-child(1) { animation-delay: 0.1s; }
+  .photo:nth-child(2) { animation-delay: 0.3s; }
+  .photo:nth-child(3) { animation-delay: 0.5s; }
+  .photo:nth-child(4) { animation-delay: 0.7s; }
+  
+  @keyframes photoFadeZoom {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .polaroid {
+    padding: 5px;
+    background: white;
+    position: relative;
+  }
+  
+  .rotate-left {
+    transform: rotate(-6deg);
+  }
+  
+  .rotate-right {
+    transform: rotate(5deg);
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  canvas#confetti-canvas {
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Modal Zoom Photo */
+  
+  #photo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 15, 15, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+  }
+  
+  #photo-modal.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  #modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    text-align: center;
+    color: #ffd6e8;
+    font-family: 'Segoe UI', sans-serif;
+    user-select: none;
+  }
+  
+  #modal-img {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 12px;
+    box-shadow: 0 0 40px #ff69b4aa;
+    margin-bottom: 12px;
+  }
+  
+  #modal-phrase {
+    font-size: 1.3em;
+    font-weight: 600;
+    text-shadow: 0 0 8px #ff69b4cc;
+  }
+  
+  #modal-close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: #d63384;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 12px #ff69b4cc;
+    line-height: 0.8;
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  #modal-close:hover {
+    background: #ff4c9d;
+  }
+  
+  @media (max-width: 400px) {
+    #modal-phrase {
+      font-size: 1em;
+    }
+    #modal-close {
+      font-size: 1.5rem;
+      width: 30px;
+      height: 30px;
+    }
+  }
+  
