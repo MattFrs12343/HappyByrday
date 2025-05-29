@@ -54,10 +54,8 @@ body {
   
   .gift-area {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
+  display: inline-block;
+  vertical-align: middle; /* Para alinearlo verticalmente con el regalo */
   }
   
   #gift-box {
@@ -72,18 +70,19 @@ body {
   
   .tag {
     position: absolute;
-    top: 10%;
-    right: -12vw;
-    background: #fff3f8;
-    border: 2px dashed #d63384;
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 3vw;
-    color: #c2185b;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    transform: rotate(-10deg);
-    white-space: nowrap;
-    user-select: none;
+  top: 50%;
+  left: 105%; /* Justo al lado derecho del regalo */
+  transform: translateY(-50%) rotate(-10deg); /* Centrar vertical y rotar */
+  background: #fff3f8;
+  border: 2px dashed #d63384;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 3vw;
+  color: #c2185b;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  user-select: none;
+  transition: left 0.3s ease; /* para que el movimiento sea suave si cambia */
   }
   
   @media (min-width: 600px) {
@@ -91,8 +90,8 @@ body {
       font-size: 180px;
     }
     .tag {
-      font-size: 16px;
-      right: -130px;
+        font-size: 16px;
+        left: 110%;
     }
   }
   
